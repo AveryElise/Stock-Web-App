@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content%}
+
+<h1 class="m-5">
+	Tasks
+</h1>
+
+	<table class="table text-center m-5 mx-auto" style="width:50%; margin: auto;">
+	  <thead class="thead-dark">
+	    <tr id="tableheaders">
+	      <th scope="col">Task</th>
+	      <th scope="col">Date Created</th>
+	      <th></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    {% for task in mytasks %}	  	
+	    <tr>
+			<td name="tasktodelete">{{task.task}}</th>
+		   	<td>{{task.created}}</td>
+		   	<td> <a class="btn btn-secondary" href="/complete/{{task.id}}">Complete</a></td>
+	    </tr>
+	    {% endfor %}
+
+	    <tr>
+	    	<td>
+	    		<form method='post' action='/create'>
+					<input class="form-control" type="text" name="newtask" id="newtask">
+			</td>
+			<td>
+			</td>
+			<td>
+				<button id="submitbtn" type="submit" class="btn btn-primary" disabled>Create</button>
+			</form>
+			</td>
+	    </tr>
+
+	  </tbody>
+	</table>
+
+
+	<script>
+		document.querySelector('#newtask').onkeyup = function() {
+			if (document.querySelector('#newtask').value == '') {
+				document.querySelector('#submitbtn').disabled = true;
+			} else {
+				document.querySelector('#submitbtn').disabled = false;
+			}
+		}
+	</script>
+{% endblock %}
