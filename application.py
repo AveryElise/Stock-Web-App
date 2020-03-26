@@ -18,14 +18,14 @@ def create_connection(db_file):
 
 
 def inserttask(taskset):
-	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task App\task.db")
+	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task-Web-App\task.db")
 	cur=conn.cursor()
 	cur.execute('Insert into tasks(task, created) VALUES(?, ?)', taskset)
 	conn.commit()
 	conn.close()
 
 def deletetask(taskid):
-	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task App\task.db")
+	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task-Web-App\task.db")
 	cur=conn.cursor()
 	cur.execute('DELETE FROM tasks WHERE taskid=?', (taskid,))
 	conn.commit()
@@ -33,7 +33,7 @@ def deletetask(taskid):
 
 
 def completetask(taskid):
-	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task App\task.db")
+	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task-Web-App\task.db")
 	cur=conn.cursor()
 	cur.execute('UPDATE tasks SET status = "completed" WHERE taskid=?', (taskid,))
 	conn.commit()
@@ -41,7 +41,7 @@ def completetask(taskid):
 
 
 def gettasks():
-	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task App\task.db")
+	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task-Web-App\task.db")
 	cur=conn.cursor()
 	cur.execute('Select * from tasks WHERE status="active"')
 	rows=cur.fetchall()
@@ -58,7 +58,7 @@ def gettasks():
 
 
 def getcompletedtasks():
-	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task App\task.db")
+	conn=create_connection(r"C:\Users\avery\Documents\Learn to Code\Standalone Projects\Task-Web-App\task.db")
 	cur=conn.cursor()
 	cur.execute('Select * from tasks WHERE status="completed"')
 	rows=cur.fetchall()
