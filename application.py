@@ -10,7 +10,7 @@ token = None
 
 """
 Sign Up at IEX API to get a personal API token (free): 
-https://iexcloud.io/?gclid=Cj0KCQjw3Nv3BRC8ARIsAPh8hgI9Un2KrPqeWxv3Xop2f-7BusG7zoWeaAy46n4M2cQ0ap-yvTWCukcaAg5OEALw_wcB
+https://iexcloud.io/
 """
 
 
@@ -211,3 +211,6 @@ if token != None:
 		app.run()
 else:
 	print("Please Sign Up and Request API Token from IEX API")
+	token = input("Enter API token: ")
+	if __name__ == '__main__':
+		app.run()
