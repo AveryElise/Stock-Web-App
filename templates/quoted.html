@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content%}
+
+<p class="text-center">The price for 1 share of <strong>{{symbol}}</strong> stock is <strong style="color: green;">{{price | currencyFormat}}</strong></p>
+
+{% endblock %}

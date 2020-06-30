@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content%}
+
+	<table class="table text-center m-5 mx-auto" style="width:50%; margin: auto;">
+	  <thead class="thead-dark">
+	    <tr id="tableheaders">
+	      <th scope="col">Timestamp</th>
+	      <th scope="col">Symbol</th>
+	      <th scope="col">Name</th>
+	      <th scope="col">Shares</th>
+		  <th scope="col">Transaction Value</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    {% for row in table %}	  	
+	    <tr>
+	    	<td>{{row[0]}}</td>
+			<td>{{row[1]}}</th>
+		   	<td>{{row[2]}}</td>
+		   	<td>{{row[3]}}</td>
+		   	<td>{{row[4] | currencyFormat}}</td>
+	    </tr>
+	    {% endfor %}
+
+
+	  </tbody>
+	</table>
+
+{% endblock %}

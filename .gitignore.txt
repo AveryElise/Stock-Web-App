@@ -1,0 +1,2 @@
+# Ignore api file
+*.txt

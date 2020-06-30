@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content%}
+
+
+<div class="mx-auto" style="width: 550px;">
+
+<form action="/cash" method="post" class="mx-auto p-5">
+<label><strong>Transfer Cash From:</strong></label>	
+<div class="input-group mb-3">
+
+<select name="transferDirection" class="form-control">
+  <option value="fromBank">Bank to Stockyard</option>
+  <option value="toBank">Stockyard to Bank</option>
+</select>
+  <input type="number" class="form-control" name="transferAmount" min=0 value=0.00>
+</div>
+<div class="text-center">
+<button type="submit" class="btn btn-primary">Transfer</button>
+</div>
+</form>
+
+</div>
+
+{% endblock %}
